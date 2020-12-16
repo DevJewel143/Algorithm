@@ -1,0 +1,14 @@
+
+// x^n % mod
+ll bigmod(ll x, ll n, ll mod)
+{
+	ll res = 1LL;
+	while(n)
+	{
+		if(n&1LL)
+			res = (res*x) % mod;
+		x = (x*x)%mod;
+		n >>= 1LL;
+	}
+	return res;
+}

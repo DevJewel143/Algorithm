@@ -1,0 +1,20 @@
+ll NcR(ll n, ll r)
+{
+    ll p = 1, k = 1;
+    if (n-r < r)
+        r = n-r;
+    while (r)
+    {
+        p *= n;
+        k *= r;
+
+        long long m = __gcd(p, k);
+
+        p /= m;
+        k /= m;
+
+        n--;
+        r--;
+    } 
+    return p;
+}
